@@ -10,7 +10,7 @@
   
    正例：表达逻辑删除的字段名`is_deleted`，1表示删除，0表示未删除。 
 
-2. 【强制】表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下划线中间只出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称需要慎重考虑。  说明：MySQL在Windows下不区分大小写，但在Linux下默认是区分大小写。因此，数据库名、表名、字段名，都不允许出现任何大写字母，避免节外生枝。  正例：aliyun\_admin，rdc\_config，level3\_name  反例：AliyunAdmin，rdcConfig，level\_3\_name 
+2. 【强制】表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下划线中间只出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称需要慎重考虑。  说明：MySQL在Windows下不区分大小写，但在Linux下默认是区分大小写。因此，数据库名、表名、字段名，都不允许出现任何大写字母，避免节外生枝。  正例：snb\_admin，rdc\_config，level3\_name  反例：snbAdmin，rdcConfig，level\_3\_name 
 3. 【强制】禁用保留字，如`desc`、`range`、`match`、`delayed`等，请参考MySQL官方保留字。 
 4. 【强制】主键索引名为pk_字段名；唯一索引名为uk_字段名；普通索引名则为idx\_字段名。 
 
@@ -18,16 +18,16 @@
    说明：pk _即primary key；uk_ 即 unique key；idx\_ 即index的简称。 
 
 5. 【强制】如果存储的字符串长度几乎相等，使用char定长字符串类型。 
-6. 【强制】varchar是可变长字符串，不预先分配存储空间，长度不要超过5000，如果存储长度大于此值，定义字段类型为text，独立出来一张表，用主键来对应，避免影响其它字段索引效率。 
-7. 【强制】表必备三字段：id, gmt\_create, gmt\_modified。 
+6. 【强制】表必备三字段：id, gmt\_create, gmt\_modified。 
 
   
    说明：其中id必为主键，类型为unsigned bigint、单表时自增、步长为1。gmt\_create, gmt\_modified的类型均为datetime类型，前者现在时表示主动创建，后者过去分词表示被动更新。 
 
+7. 【推荐】varchar是可变长字符串，不预先分配存储空间，长度不要超过5000，如果存储长度大于此值，定义字段类型为text，独立出来一张表，用主键来对应，避免影响其它字段索引效率。 
 8. 【推荐】表的命名最好是加上“业务名称\_表的作用”。 
 
   
-   正例：alipay\_task / force\_project / trade\_config 
+   正例：snb\_task / force\_project / trade\_config 
 
 9. 【推荐】库名与应用名称尽量一致。 
 10. 【推荐】如果修改字段含义或对字段表示的状态追加时，需要及时更新字段注释。 
