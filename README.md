@@ -1,23 +1,8 @@
-# Initial page
+# 前言
 
-## Getting Super Powers
+本文用于规范雪球科技的数据库设计。当前主要参考阿里巴巴的数据库设计规范，其完整版可以在[https://github.com/alibaba/p3c](https://github.com/alibaba/p3c) 上找到
 
-Becoming a super hero is a fairly straight forward process:
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-```
-// Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
+## 
 
 
 
